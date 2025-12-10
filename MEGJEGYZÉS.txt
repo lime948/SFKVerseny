@@ -1,0 +1,2 @@
+A helyezések még nem jól működnek
+Az sql-t nem tudom hogy hogy oldjam meg, azt egyenlőre hagyom
