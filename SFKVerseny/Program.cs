@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SFKVerseny.Adatbazis;
 using SFKVerseny.Models;
+using MySql.Data.MySqlClient;
 
 namespace SFKVerseny
 {
@@ -26,22 +27,25 @@ namespace SFKVerseny
             int pont3 = int.Parse(Console.ReadLine());
             int legjobb = Math.Max(pont1, Math.Max(pont2, pont3));
 
+            #region html
             versenyzok.Add(new TableRowData {Name = nev, Pont1 = pont1, Pont2 = pont2, Pont3 = pont3, LegjobbPont = legjobb});
 
             var doc = new HtmlDocument();
             doc.Load("SFKVerseny.html");
             var table = doc.DocumentNode.SelectSingleNode("//table[@id='adatok']");
-            table.RemoveAllChildren();
+            //table.RemoveAllChildren();
             var headerRow = HtmlNode.CreateNode(
                 "<tr><th>Név</th><th>1. lengetés</th><th>2. lengetés</th><th>3. lengetés</th><th>Legjobb pontszám</th><th>Összesített pontszám</th></tr>"
                 );
             var newRow = HtmlNode.CreateNode(
                 $"<tr><td>{nev}</td><td>{pont1}</td><td>{pont2}</td><td>{pont3}</td><td>{legjobb}</td><td></td></tr>"
                 );
-            table.AppendChild(headerRow);
+            //table.AppendChild(headerRow);
             table.AppendChild(newRow);
             doc.Save("SFKVerseny.html");
+            #endregion
 
+            
         }
         public class TableRowData
         {
