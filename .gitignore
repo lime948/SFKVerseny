@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/SFKVerseny/fejlec.png
+/SFKVerseny/style.css
+/SFKVerseny/SFKVerseny.html
