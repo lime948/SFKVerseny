@@ -95,7 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adatbazis\Adatbazis.cs" />
     <Compile Include="Models\Versenyzok.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
